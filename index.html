@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>European Tamilan — Earn with AI using only your phone</title>
+  <meta name="description" content="Claude AI kits by Karthik (@european.tamilan): edit pro reels, make UGC product videos and build websites — all from your phone.">
+  <meta name="theme-color" content="#FAF8F5">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Earn with AI — using only your phone | European Tamilan">
+  <meta property="og:description" content="Claude AI kits to edit reels, make UGC videos and build websites from your phone.">
+  <meta property="og:site_name" content="European Tamilan">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Earn with AI — using only your phone | European Tamilan">
+  <meta name="twitter:description" content="Claude AI kits to edit reels, make UGC videos and build websites from your phone.">
+
+  <!-- Inline SVG emoji favicon (🚀) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    :root{
+      --bg:#FAF8F5;
+      --ink:#14141A;
+      --muted:#55555F;
+      --accent:#FF6A3D;
+      --accent-ink:#B23C14;   /* darker orange for text on light backgrounds (AA contrast) */
+      --accent-soft:#FFEDE6;
+      --card:#FFFFFF;
+      --line:#ECE6DF;
+      --radius:20px;
+      --shadow:0 1px 2px rgba(20,20,26,.04),0 10px 30px rgba(20,20,26,.07);
+      --shadow-lg:0 2px 4px rgba(20,20,26,.05),0 20px 50px rgba(20,20,26,.12);
+      --head:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+      --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3{font-family:var(--head);line-height:1.12;letter-spacing:-.02em;margin:0}
+    p{margin:0}
+    a{color:inherit}
+    img,svg{max-width:100%}
+    :focus-visible{outline:3px solid var(--accent-ink);outline-offset:3px;border-radius:10px}
+
+    .container{width:100%;max-width:1120px;margin:0 auto;padding:0 18px}
+    section{padding:72px 0;scroll-margin-top:72px}
+    .eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:12px}
+    .section-head{max-width:620px;margin-bottom:36px}
+    .section-head h2{font-size:clamp(1.75rem,6vw,2.5rem)}
+    .section-head p{margin-top:12px;color:var(--muted)}
+    .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:12px 16px;border-radius:12px;z-index:100}
+    .skip:focus{left:8px}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 24px;border-radius:999px;border:2px solid transparent;font:600 1rem/1 var(--body);text-decoration:none;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease;-webkit-tap-highlight-color:transparent}
+    .btn:hover{transform:translateY(-2px)}
+    .btn:active{transform:translateY(0)}
+    .btn--primary{background:var(--accent);color:var(--ink);box-shadow:0 8px 20px rgba(255,106,61,.32)}
+    .btn--primary:hover{box-shadow:0 12px 28px rgba(255,106,61,.42)}
+    .btn--ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+    .btn--ghost:hover{background:var(--ink);color:#fff}
+    .btn--dark{background:var(--ink);color:#fff}
+    .btn--block{width:100%}
+
+    /* Top bar */
+    .topbar{position:sticky;top:0;z-index:40;background:rgba(250,248,245,.86);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+    .topbar .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{font-family:var(--head);font-weight:800;font-size:1.1rem;text-decoration:none;display:flex;align-items:center;gap:8px;min-height:48px}
+    .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+    .nav{display:flex;gap:4px}
+    .nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 12px;font-weight:600;font-size:.95rem;text-decoration:none;border-radius:12px}
+    .nav a:hover{background:var(--accent-soft)}
+
+    /* Hero */
+    .hero{padding:48px 0 64px}
+    .hero .container{display:grid;gap:44px;align-items:center}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:.85rem;font-weight:600;box-shadow:var(--shadow)}
+    .pill .live{width:8px;height:8px;border-radius:50%;background:#1F9D55;box-shadow:0 0 0 4px rgba(31,157,85,.15)}
+    .hero h1{font-size:clamp(2.2rem,9vw,4rem);font-weight:800;margin-top:20px}
+    .hero h1 .hl{color:var(--accent-ink)}
+    .hero .sub{font-size:1.1rem;color:var(--muted);margin-top:16px;max-width:520px}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .hero-cta .btn{flex:1 1 200px}
+
+    .phone{width:100%;max-width:300px;margin:0 auto;aspect-ratio:9/17;background:var(--ink);border-radius:40px;padding:12px;box-shadow:var(--shadow-lg);transform:rotate(-3deg)}
+    .phone-screen{height:100%;background:var(--bg);border-radius:30px;padding:28px 16px 16px;display:flex;flex-direction:column;gap:12px;overflow:hidden;position:relative}
+    .phone-screen::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:70px;height:8px;border-radius:8px;background:var(--line)}
+    .bubble{max-width:85%;padding:12px 14px;border-radius:18px;font-size:.85rem;line-height:1.4}
+    .bubble.me{align-self:flex-end;background:var(--accent);color:var(--ink);border-bottom-right-radius:6px}
+    .bubble.ai{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:6px}
+    .bubble.ai b{font-family:var(--head)}
+    .mini-bars{display:grid;gap:6px;margin-top:6px}
+    .mini-bars span{height:6px;border-radius:6px;background:var(--line)}
+    .mini-bars span:nth-child(1){width:90%}.mini-bars span:nth-child(2){width:70%}.mini-bars span:nth-child(3){width:80%}
+    .earn{margin-top:auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--muted)}
+    .earn strong{font-family:var(--head);font-size:1.15rem;color:var(--ink)}
+
+    /* Steps */
+    .steps{display:grid;gap:16px;counter-reset:step;list-style:none;margin:0;padding:0}
+    .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);position:relative}
+    .step-num{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--head);font-weight:800;font-size:1.1rem;margin-bottom:14px}
+    .step h3{font-size:1.2rem}
+    .step p{color:var(--muted);margin-top:6px}
+
+    /* Products */
+    .products{display:grid;gap:20px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;transition:transform .25s ease,box-shadow .25s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .card-icon{width:56px;height:56px;border-radius:16px;background:var(--accent-soft);display:grid;place-items:center;font-size:1.75rem}
+    .card h3{font-size:1.25rem;margin-top:16px}
+    .card .benefit{color:var(--muted);margin-top:6px}
+    .card ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px;flex:1}
+    .card li{display:flex;gap:10px;font-size:.95rem}
+    .card li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent-ink);font-weight:700;font-size:.75rem;display:grid;place-items:center;margin-top:2px}
+    .price{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin:22px 0 16px;padding-top:18px;border-top:1px dashed var(--line)}
+    .price strong{font-family:var(--head);font-size:1.6rem;font-weight:800}
+    .price s{color:var(--muted);font-size:.9rem}
+    .card.featured{border:2px solid var(--accent);background:linear-gradient(180deg,#FFF7F3 0%,var(--card) 45%);animation:glow 3.2s ease-in-out infinite}
+    @keyframes glow{0%,100%{box-shadow:0 10px 30px rgba(255,106,61,.16)}50%{box-shadow:0 14px 44px rgba(255,106,61,.36)}}
+    .badge{position:absolute;top:-13px;right:20px;background:var(--ink);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.03em;padding:6px 12px;border-radius:999px}
+
+    /* Audience */
+    .audience{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+    .aud{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .aud .emo{font-size:1.75rem}
+    .aud h3{font-size:1.05rem;margin-top:10px}
+    .aud p{font-size:.9rem;color:var(--muted);margin-top:4px}
+
+    /* Testimonials */
+    .reviews{display:grid;gap:16px}
+    .review{background:var(--card);border:1px dashed #D9CFC5;border-radius:var(--radius);padding:24px}
+    .stars{color:var(--accent-ink);letter-spacing:2px}
+    .review blockquote{margin:12px 0 16px;font-size:1.05rem;font-style:italic;color:var(--muted)}
+    .review .who{display:flex;align-items:center;gap:12px;font-weight:600;font-size:.9rem}
+    .avatar{width:40px;height:40px;border-radius:50%;background:var(--line);display:grid;place-items:center;font-size:1.1rem}
+
+    /* FAQ */
+    .faq{display:grid;gap:12px;max-width:760px}
+    .faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+    .faq summary{list-style:none;cursor:pointer;min-height:60px;padding:16px 56px 16px 20px;font-weight:600;position:relative;display:flex;align-items:center}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";position:absolute;right:18px;top:50%;width:28px;height:28px;margin-top:-14px;border-radius:50%;background:var(--accent-soft);color:var(--accent-ink);display:grid;place-items:center;font-size:1.2rem;transition:transform .25s ease}
+    .faq details[open] summary::after{transform:rotate(45deg)}
+    .faq .ans{padding:0 20px 20px;color:var(--muted)}
+
+    /* CTA band */
+    .cta{padding:0 0 72px}
+    .cta-box{background:var(--ink);color:#fff;border-radius:28px;padding:44px 24px;text-align:center;position:relative;overflow:hidden}
+    .cta-box::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,61,.45),transparent 70%);top:-160px;right:-100px}
+    .cta-box h2{font-size:clamp(1.75rem,7vw,2.75rem);position:relative}
+    .cta-box p{color:#C9C9D2;margin:12px auto 26px;max-width:460px;position:relative}
+    .cta-box .btn{position:relative}
+
+    /* Footer */
+    footer{border-top:1px solid var(--line);padding:36px 0 40px;font-size:.92rem;color:var(--muted)}
+    footer .container{display:grid;gap:16px}
+    .foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}
+    .foot-links a{display:inline-flex;align-items:center;min-height:48px;font-weight:600;color:var(--ink);text-decoration-color:var(--accent);text-underline-offset:4px}
+    .demo-note{font-size:.82rem}
+
+    /* Mobile sticky bundle bar */
+    .mbar{position:fixed;left:0;right:0;bottom:0;z-index:45;background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -8px 24px rgba(20,20,26,.08)}
+    .mbar .info{font-size:.8rem;color:var(--muted);line-height:1.3}
+    .mbar .info strong{display:block;font-family:var(--head);font-size:1.05rem;color:var(--ink)}
+    .mbar .btn{min-height:48px;padding:0 20px;flex:none}
+    body{padding-bottom:84px}
+
+    /* Modal */
+    .modal{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:20px}
+    .modal[hidden]{display:none}
+    .modal-backdrop{position:absolute;inset:0;background:rgba(20,20,26,.55);opacity:0;transition:opacity .25s ease}
+    .modal-panel{position:relative;width:100%;max-width:380px;background:var(--card);border-radius:24px;padding:36px 24px 24px;text-align:center;box-shadow:var(--shadow-lg);opacity:0;transform:translateY(16px) scale(.92);transition:opacity .25s ease,transform .3s cubic-bezier(.2,.9,.3,1.3)}
+    .modal.open .modal-backdrop{opacity:1}
+    .modal.open .modal-panel{opacity:1;transform:none}
+    .modal-emoji{font-size:3rem;line-height:1;display:inline-block}
+    .modal.open .modal-emoji{animation:pop .6s ease .1s both}
+    @keyframes pop{0%{transform:scale(.3) rotate(-20deg)}60%{transform:scale(1.2) rotate(8deg)}100%{transform:none}}
+    .modal h2{font-size:1.5rem;margin-top:12px}
+    .modal p{color:var(--muted);margin:10px 0 6px}
+    .modal p strong{color:var(--ink);background:var(--accent-soft);padding:1px 6px;border-radius:6px}
+    .modal .for{font-size:.85rem;margin-bottom:20px}
+    .modal-x{position:absolute;top:10px;right:10px;width:48px;height:48px;border:0;border-radius:50%;background:transparent;font-size:1.75rem;line-height:1;color:var(--ink);cursor:pointer}
+    .modal-x:hover{background:var(--bg)}
+
+    /* Scroll reveal (only when JS is on) */
+    .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    .js .reveal.in{opacity:1;transform:none}
+
+    /* Larger screens */
+    @media (min-width:640px){
+      .steps{grid-template-columns:repeat(3,1fr)}
+      .products{grid-template-columns:repeat(2,1fr)}
+      .audience{grid-template-columns:repeat(4,1fr)}
+      .reviews{grid-template-columns:repeat(3,1fr)}
+      .hero-cta .btn{flex:0 0 auto}
+      .cta-box{padding:64px 40px}
+    }
+    @media (min-width:900px){
+      .mbar{display:none}
+      body{padding-bottom:0}
+      section{padding:96px 0}
+      .hero{padding:72px 0 96px}
+      .hero .container{grid-template-columns:1.2fr .8fr}
+      footer .container{grid-template-columns:1fr auto;align-items:center}
+    }
+    @media (min-width:1080px){
+      .products{grid-template-columns:repeat(4,1fr)}
+    }
+    @media (max-width:359px){
+      .nav a{padding:0 8px}
+      .logo{font-size:1rem}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+      .js .reveal{opacity:1;transform:none}
+      .btn:hover,.card:hover{transform:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- 1. Sticky top bar -->
+  <header class="topbar">
+    <div class="container">
+      <a class="logo" href="#top" aria-label="European Tamilan — back to top"><span class="logo-dot" aria-hidden="true"></span>European Tamilan</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#products">Shop</a>
+        <a href="https://instagram.com/european.tamilan" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 2. Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="reveal">
+          <span class="pill"><span class="live" aria-hidden="true"></span>Day 3 of my 5-day Claude series</span>
+          <h1 id="hero-title">Earn with AI — <span class="hl">using only your phone</span></h1>
+          <p class="sub">Ready-to-use Claude prompts to edit reels, shoot UGC product videos and build websites. No laptop, no experience — just copy, paste and create.</p>
+          <div class="hero-cta">
+            <a class="btn btn--primary" href="#products">Get the kits <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="https://instagram.com/european.tamilan" target="_blank" rel="noopener noreferrer">Watch on Instagram</a>
+          </div>
+        </div>
+        <div class="reveal" aria-hidden="true">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="bubble me">Edit my reel: add a hook, captions &amp; cuts ✂️</div>
+              <div class="bubble ai"><b>Claude</b><br>Done! Here's your shot-by-shot edit plan ✨
+                <div class="mini-bars"><span></span><span></span><span></span></div>
+              </div>
+              <div class="bubble me">Now build me a website 🌐</div>
+              <div class="earn"><span>From your phone</span><strong>100% 📱</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. How it works -->
+    <section id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2 id="how-title">Three steps. Two minutes.</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal"><span class="step-num">1</span><h3>Pick a kit</h3><p>Choose the skill you want to earn with — reels, UGC videos or websites.</p></li>
+          <li class="step reveal"><span class="step-num">2</span><h3>Pay securely</h3><p>Checkout in seconds with UPI or card, right from your phone.</p></li>
+          <li class="step reveal"><span class="step-num">3</span><h3>Get instant download</h3><p>Your prompts and guides arrive immediately — start using them today.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. Products (rendered from the PRODUCTS array in the script below) -->
+    <section id="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The kits</span>
+          <h2 id="products-title">Pick your kit</h2>
+          <p>Every kit is made for phones. Copy the prompt, paste it into Claude, get results.</p>
+        </div>
+        <div class="products" id="productGrid"></div>
+        <noscript><p>Please enable JavaScript to see the kits.</p></noscript>
+      </div>
+    </section>
+
+    <!-- 5. Who is this for -->
+    <section id="who" aria-labelledby="who-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Who is this for</span>
+          <h2 id="who-title">Made for people starting with just a phone</h2>
+        </div>
+        <div class="audience">
+          <div class="aud reveal"><div class="emo" aria-hidden="true">🎓</div><h3>Students</h3><p>Earn side income between classes.</p></div>
+          <div class="aud reveal"><div class="emo" aria-hidden="true">💼</div><h3>Job seekers</h3><p>Build skills and a portfolio that stand out.</p></div>
+          <div class="aud reveal"><div class="emo" aria-hidden="true">🏪</div><h3>Small business owners</h3><p>Make your own videos and website — no agency.</p></div>
+          <div class="aud reveal"><div class="emo" aria-hidden="true">📱</div><h3>Creators</h3><p>Edit faster and land paid brand deals.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Testimonials (placeholders — replace with REAL reviews only) -->
+    <section id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Reviews</span>
+          <h2 id="reviews-title">What buyers say</h2>
+        </div>
+        <div class="reviews">
+          <figure class="review reveal" style="margin:0"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>[Your real customer review here]</blockquote><figcaption class="who"><span class="avatar" aria-hidden="true">👤</span>[Customer name]</figcaption></figure>
+          <figure class="review reveal" style="margin:0"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>[Your real customer review here]</blockquote><figcaption class="who"><span class="avatar" aria-hidden="true">👤</span>[Customer name]</figcaption></figure>
+          <figure class="review reveal" style="margin:0"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>[Your real customer review here]</blockquote><figcaption class="who"><span class="avatar" aria-hidden="true">👤</span>[Customer name]</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faq-title">Questions, answered</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal"><summary>Is delivery instant?</summary><p class="ans">Yes. As soon as your payment goes through, you get a download link on screen and by email.</p></details>
+          <details class="reveal"><summary>Are the kits in Tamil or English?</summary><p class="ans">The prompts are in English (so Claude gives the best results), and the guides come with simple Tamil explanations.</p></details>
+          <details class="reveal"><summary>Can I really do everything on just a phone?</summary><p class="ans">Yes. Every kit is built and tested on a phone — the Claude app plus free editing apps. No laptop needed.</p></details>
+          <details class="reveal"><summary>What if it's not for me? Can I get a refund?</summary><p class="ans">Because these are instant digital downloads, sales are generally final. If something doesn't work as described, message me and I'll make it right.</p></details>
+          <details class="reveal"><summary>How do I get support?</summary><p class="ans">DM me on Instagram <a href="https://instagram.com/european.tamilan" target="_blank" rel="noopener noreferrer">@european.tamilan</a> or email me — I reply to every buyer.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Final CTA -->
+    <div class="cta">
+      <div class="container">
+        <div class="cta-box reveal">
+          <h2>Start earning with AI today</h2>
+          <p>Grab the Complete Bundle and get every current and future kit in one go.</p>
+          <button class="btn btn--primary" type="button" data-buy="bundle">Get the Bundle <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>
+        <div class="foot-links">
+          <a href="https://instagram.com/european.tamilan" target="_blank" rel="noopener noreferrer">Instagram @european.tamilan</a>
+          <a href="mailto:your-email@example.com">your-email@example.com</a>
+        </div>
+        <p>© <span id="year">2026</span> European Tamilan · Karthik, Finland</p>
+      </div>
+      <p class="demo-note">Demo site built with Claude.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky bundle bar -->
+  <div class="mbar" id="mbar">
+    <div class="info">Complete Bundle<strong id="mbarPrice">₹599 / €9</strong></div>
+    <button class="btn btn--primary" type="button" data-buy="bundle">Get the Bundle</button>
+  </div>
+
+  <!-- Demo popup -->
+  <div class="modal" id="demoModal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalText">
+      <button class="modal-x" type="button" data-close aria-label="Close popup">×</button>
+      <div class="modal-emoji" aria-hidden="true">🎉</div>
+      <h2 id="modalTitle">Demo store</h2>
+      <p id="modalText">Comment <strong>WEBSITE</strong> on my reel to get this prompt!</p>
+      <p class="for" id="modalFor"></p>
+      <a class="btn btn--primary btn--block" href="https://instagram.com/european.tamilan" target="_blank" rel="noopener noreferrer">Follow @european.tamilan</a>
+    </div>
+  </div>
+
+  <script>
+  /* =====================================================================
+     PRODUCTS — edit names, text and prices here. Everything updates
+     automatically (cards, sticky bar and popup).
+       id        : short unique key (the bundle must stay "bundle")
+       emoji     : icon shown on the card
+       name      : product name
+       benefit   : one-line benefit
+       bullets   : exactly 3 short points
+       priceINR  : price in rupees  (number)
+       priceEUR  : price in euros   (number)
+       wasINR/EUR: optional "worth" price shown crossed out (or remove)
+       badge     : optional label like "Best value" (or remove)
+       featured  : true = highlighted card with glow
+     ===================================================================== */
+  const PRODUCTS = [
+    {
+      id: "reels",
+      emoji: "🎬",
+      name: "Claude Reel Editing Kit",
+      benefit: "My exact prompts to edit pro reels on your phone.",
+      bullets: ["Prompts for hooks, cuts & captions", "Works with free phone editing apps", "Copy, paste, post — no experience needed"],
+      priceINR: 199,
+      priceEUR: 4
+    },
+    {
+      id: "ugc",
+      emoji: "📦",
+      name: "UGC Product Video Kit",
+      benefit: "Prompts + shot list for cinematic product videos.",
+      bullets: ["Ready shot list for any product", "Scripts that sell in 15–30 seconds", "Pitch templates to land brand deals"],
+      priceINR: 299,
+      priceEUR: 5
+    },
+    {
+      id: "website",
+      emoji: "🌐",
+      name: "Website-in-5-Minutes Kit",
+      benefit: "This exact website prompt + GitHub Pages guide.",
+      bullets: ["The prompt that built this site", "Free hosting on GitHub Pages", "Step-by-step guide, all from your phone"],
+      priceINR: 299,
+      priceEUR: 5
+    },
+    {
+      id: "bundle",
+      emoji: "🚀",
+      name: "Complete Bundle",
+      benefit: "All 3 kits + every future kit, in one download.",
+      bullets: ["Reel, UGC & Website kits included", "All future kits added free", "Lowest price — save 25%+"],
+      priceINR: 599,
+      priceEUR: 9,
+      wasINR: 797,
+      wasEUR: 14,
+      badge: "Best value",
+      featured: true
+    }
+  ];
+
+  (function () {
+    "use strict";
+
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    const price = (p) => "₹" + p.priceINR + " / €" + p.priceEUR;
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* ---- Render product cards ---- */
+    const grid = document.getElementById("productGrid");
+    if (grid) {
+      grid.innerHTML = PRODUCTS.map((p) => {
+        const was = (p.wasINR && p.wasEUR) ? '<s aria-label="Worth ₹' + esc(p.wasINR) + ' / €' + esc(p.wasEUR) + '">₹' + esc(p.wasINR) + " / €" + esc(p.wasEUR) + "</s>" : "";
+        return (
+          '<article class="card reveal' + (p.featured ? " featured" : "") + '" aria-labelledby="t-' + esc(p.id) + '">' +
+            (p.badge ? '<span class="badge">' + esc(p.badge) + "</span>" : "") +
+            '<div class="card-icon" aria-hidden="true">' + esc(p.emoji) + "</div>" +
+            '<h3 id="t-' + esc(p.id) + '">' + esc(p.name) + "</h3>" +
+            '<p class="benefit">' + esc(p.benefit) + "</p>" +
+            "<ul>" + p.bullets.map((b) => "<li>" + esc(b) + "</li>").join("") + "</ul>" +
+            '<div class="price"><strong>' + esc(price(p)) + "</strong>" + was + "</div>" +
+            '<button class="btn ' + (p.featured ? "btn--primary" : "btn--dark") + ' btn--block" type="button" data-buy="' + esc(p.id) + '" aria-label="Buy ' + esc(p.name) + " for " + esc(price(p)) + '">Buy now</button>' +
+          "</article>"
+        );
+      }).join("");
+    }
+
+    /* ---- Sticky bar price from the bundle ---- */
+    const bundle = PRODUCTS.find((p) => p.id === "bundle");
+    const mbarPrice = document.getElementById("mbarPrice");
+    if (bundle && mbarPrice) mbarPrice.textContent = price(bundle);
+
+    /* ---- Footer year ---- */
+    const year = document.getElementById("year");
+    if (year) year.textContent = String(new Date().getFullYear());
+
+    /* ---- Scroll reveal ---- */
+    const reveals = document.querySelectorAll(".reveal");
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      reveals.forEach((el) => el.classList.add("in"));
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+      reveals.forEach((el, i) => {
+        el.style.transitionDelay = (i % 4) * 70 + "ms";
+        io.observe(el);
+      });
+    }
+
+    /* ---- Demo popup ---- */
+    const modal = document.getElementById("demoModal");
+    const modalFor = document.getElementById("modalFor");
+    let lastFocus = null;
+    let closeTimer = null;
+
+    function focusables() {
+      return modal ? Array.from(modal.querySelectorAll("a[href], button:not([disabled])")) : [];
+    }
+
+    function openModal(productId) {
+      if (!modal) return;
+      clearTimeout(closeTimer);
+      const p = PRODUCTS.find((x) => x.id === productId);
+      if (modalFor) modalFor.textContent = p ? "You picked: " + p.name + " (" + price(p) + ")" : "";
+      lastFocus = document.activeElement;
+      modal.hidden = false;
+      document.body.style.overflow = "hidden";
+      requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add("open")));
+      const f = focusables();
+      if (f.length) f[f.length - 1].focus();
+    }
+
+    function closeModal() {
+      if (!modal || modal.hidden) return;
+      modal.classList.remove("open");
+      document.body.style.overflow = "";
+      closeTimer = setTimeout(() => { modal.hidden = true; }, reduceMotion ? 0 : 280);
+      if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+    }
+
+    document.addEventListener("click", (e) => {
+      const buy = e.target.closest("[data-buy]");
+      if (buy) { e.preventDefault(); openModal(buy.getAttribute("data-buy")); return; }
+      if (e.target.closest("[data-close]")) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!modal || modal.hidden) return;
+      if (e.key === "Escape") { closeModal(); return; }
+      if (e.key === "Tab") {
+        const f = focusables();
+        if (!f.length) return;
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
